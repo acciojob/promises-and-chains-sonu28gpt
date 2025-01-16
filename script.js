@@ -14,7 +14,7 @@ btn.addEventListener('click',(e)=>{
 	let b=uname.value;
   // console.log(a,b);
 	if(!a || !b){
-		return alert('insert all fields are required');
+		return alert('Please enter valid details');
 	}
 	age.value='';
 	uname.value='';
