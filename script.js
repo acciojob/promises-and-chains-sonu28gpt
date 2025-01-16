@@ -18,16 +18,14 @@ btn.addEventListener('click',(e)=>{
 	}
 	age.value='';
 	uname.value='';
-	return new Promise((res,rej)=>{
+	let promise=new Promise((res,rej)=>{
 		if(a>=18){
-			setTimeout(()=>{
-				res(alert(`Welcome, ${b}. You can vote.`))
-			},4000)
+			res(`Welcome, ${b}. You can vote.`);
 		}else{
-			setTimeout(()=>{
-			rej(alert(`Oh sorry ${b}. You aren't old enough.`));
-			},4000);
-				
+			rej(`Oh sorry ${b}. You aren't old enough.`);
 		}
 	});
+	promise
+	.then((res)=>setTimeout(()=>alert(res),4000))
+	.catch((err)=>setTimeout(()=>alert(err),4000));
 })
